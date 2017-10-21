@@ -1,10 +1,10 @@
 # converts int to base b, returns list of ints
-def conv(num,b, list = []):
+def conv(num, b, list=[]):
   if num<b:
-      return [num] + list
+      return list + [num]
   else:
     # divides by b rounding down, and appends the remainder to the list
-    return conv(num//b,b) + [num%b]
+    return conv(num//b,b, list + [num%b])
 
 def find_min_base(i):
   j = 2
